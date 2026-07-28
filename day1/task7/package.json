@@ -1,0 +1,20 @@
+{
+    "name": "typescript-setup",
+    "version": "1.0.0",
+    "description": "",
+    "license": "ISC",
+    "author": "",
+    "type": "module",
+    "main": "index.js",
+    "imports": {
+        "#some-library": "./src/types/some-library.js"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "tsc",
+        "watch": "tsc --watch"
+    },
+    "devDependencies": {
+        "@types/node": "^26.1.2"
+    }
+}
