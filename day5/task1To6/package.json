@@ -1,0 +1,22 @@
+{
+    "name": "task-manager",
+    "version": "1.0.0",
+    "description": "",
+    "license": "ISC",
+    "author": "",
+    "type": "module",
+    "main": "index.html",
+    "scripts": {
+        "test": "jest"
+    },
+    "devDependencies": {
+        "@types/jest": "^30.0.0",
+        "happy-dom": "^20.11.1",
+        "jest": "^30.4.2",
+        "jest-environment-jsdom": "^30.4.1",
+        "prettier-plugin-embed": "^0.5.1"
+    },
+    "dependencies": {
+        "ts-jest": "^29.4.12"
+    }
+}
