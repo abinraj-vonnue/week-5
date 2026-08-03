@@ -1,0 +1,112 @@
+/* task modal  */
+#task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.task-modal-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    z-index: 9;
+    inset: 0;
+}
+.task-modal {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    background-color: white;
+    position: absolute;
+    border-radius: 12px;
+    padding: 24px;
+    gap: 16px;
+}
+.modal-head {
+    display: flex;
+    justify-content: space-between;
+}
+.input-section {
+    display: flex;
+    gap: 16px;
+}
+.input-section div {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 6px;
+}
+.input-section div input,
+select {
+    width: 100%;
+    border: 1px solid #0f0f14;
+    padding: 0px 12px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: white;
+}
+.add-button-div {
+    display: flex;
+    justify-content: flex-end;
+}
+label {
+    font-family: "DM Mono";
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 13/33px;
+    color: #7a7060;
+}
+.notes {
+    color: #7a7060;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+}
+#hidden {
+    display: none;
+}
+
+.error {
+    color: red;
+    font-family: "DM Sans";
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.task-priority {
+    padding: 2px 8px;
+    gap: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 33554400px;
+}
+.task-priority {
+    font-size: 11px;
+}
+
+.high {
+    border: 1px solid #ffccd3;
+    background-color: #fff1f2;
+    color: #c70036;
+}
+.low {
+    color: #007a55;
+    border: 1px solid #a4f4cf;
+    background-color: #ecfdf5;
+}
+.medium {
+    color: #bb4d00;
+    background-color: #fffbeb;
+    border: 1px solid #fee685;
+}
+.medium path {
+    fill: #fe9a00 !important;
+}
+.low path {
+    fill: #00bc7d !important;
+}
