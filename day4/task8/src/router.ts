@@ -1,7 +1,7 @@
 // router
 // router
 
-import { getTask } from "./components/getTask";
+import { getTask } from "@components/getTask";
 import { navigate } from "./navigate";
 import register, { routes } from "./register";
 import Home from "./routes/home";

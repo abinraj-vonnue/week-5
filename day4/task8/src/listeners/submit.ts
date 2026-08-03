@@ -1,5 +1,5 @@
 import { store, Task } from "../store";
-import FormValidator from "../utilities/formValidator";
+import FormValidator from "@utils/formValidator";
 
 export default function submitEventListeners() {
     window.addEventListener("submit", (event) => {
