@@ -1,0 +1,172 @@
+
+@startuml
+title Task Manager SPA - Component Diagram
+
+left to right direction
+
+skinparam linetype ortho
+skinparam shadowing false
+skinparam packageStyle rectangle
+skinparam componentStyle rectangle
+skinparam ArrowColor #444444
+skinparam PackageBorderColor #555555
+skinparam PackageBackgroundColor White
+skinparam ComponentBorderColor #555555
+skinparam ComponentBackgroundColor White
+skinparam defaultTextAlignment center
+
+'==================================================
+' Presentation Layer
+'==================================================
+
+package "Presentation Layer" {
+
+    component "index.html" as Index
+
+    package "Pages" {
+        component "Home" as Home
+        component "Login" as Login
+        component "Signup" as Signup
+        component "Task Details" as Details
+    }
+
+    package "UI Components" {
+
+        component Header
+        component MainContent
+
+        component Stats
+        component Tasks
+        component Modal
+
+        component "Add Button" as AddBtn
+        component "Complete Button" as CompleteBtn
+        component "Remove Button" as RemoveBtn
+        component "Close Button" as CloseBtn
+    }
+
+}
+
+'==================================================
+' Application Core
+'==================================================
+
+package "Application Core" {
+
+    component Router
+    component Navigate
+    component Register
+
+}
+
+'==================================================
+' Event Layer
+'==================================================
+
+package "Event Layer" {
+
+    component "Click Listener" as Click
+
+    component "Submit Listener" as Submit
+
+    component "Keyboard Listener" as Keyboard
+
+    component "Blur Listener" as Blur
+
+}
+
+'==================================================
+' Utilities
+'==================================================
+
+package Utilities {
+
+    component "Form Validator" as Validator
+
+}
+
+'==================================================
+' State Management
+'==================================================
+
+package "State Management" {
+
+    component Store
+    component Reducer
+
+    database "Local Storage" as LocalStorage
+
+}
+
+'==================================================
+' Startup
+'==================================================
+
+Index --> Router
+
+'==================================================
+' Router
+'==================================================
+
+Router --> Register
+Router --> Navigate
+Router --> Store
+
+Register --> Home
+Register --> Login
+Register --> Signup
+Register --> Details
+
+'==================================================
+' Home Page
+'==================================================
+
+Home --> Header
+Home --> MainContent
+
+MainContent --> Stats
+MainContent --> Tasks
+MainContent --> Modal
+MainContent --> AddBtn
+
+'==================================================
+' Components
+'==================================================
+
+Tasks --> CompleteBtn
+Tasks --> RemoveBtn
+
+Details --> CompleteBtn
+Details --> RemoveBtn
+
+Modal --> CloseBtn
+
+'==================================================
+' State Usage
+'==================================================
+
+Stats --> Store
+Tasks --> Store
+Details --> Store
+
+'==================================================
+' Event System
+'==================================================
+
+Click --> Store
+
+Submit --> Validator
+Submit --> Store
+
+Keyboard --> Modal
+
+Blur --> Validator
+
+'==================================================
+' Store
+'==================================================
+
+Store --> Reducer
+Store --> LocalStorage
+
+@enduml
